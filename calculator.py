@@ -1,3 +1,6 @@
+### Written by Jason-Silla ###
+### https://github.com/Jason-Silla/JohnAI ###
+
 from decimal import DivisionByZero
 from random import randint
 from math import sqrt
