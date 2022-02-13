@@ -1,3 +1,6 @@
+### Written by Jason-Silla ###
+### https://github.com/Jason-Silla/JohnAI ###
+
 from datetime import datetime
 from enum import Enum
 
