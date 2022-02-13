@@ -1,3 +1,6 @@
+### Written by Jason-Silla ###
+### https://github.com/Jason-Silla/JohnAI ###
+
 from User import User, Month
 from os.path import exists, join
 from platform import system as os
@@ -125,5 +128,5 @@ try:
         ### Empty the response list ###
         responseByWord.clear()
 except Exception as error:
-    print("AN ERROR HAS OCCURED SOMEONE IN THE PROGRAM!!! PLEASE PUT THE ERROR ON THE JOHN/AI GITHUB PAGE ON THE BUG TRACKER!!! THIS WILL HELP IMPROVE JOHN FOR OTHERS!!!")
+    print("AN ERROR HAS OCCURED SOMEONE IN THE PROGRAM!!! PLEASE REPORT THE ERROR AT https://github.com/Jason-Silla/JohnAI")
     print(error)
