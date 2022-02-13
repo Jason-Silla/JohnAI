@@ -1,3 +1,6 @@
+### Written by Jason-Silla ###
+### https://github.com/Jason-Silla/JohnAI ###
+
 class Fraction:
     numerator = 1
     denominatior = 1
