@@ -10,11 +10,12 @@ In calculator.py:
     Error message display [2022-02-17]
 
 In User.py:
-    Added setUsername() function
+    Added setUsername() function [2022-02-17]
 
 ### CHANGED ###
 In main.py:
     Login variables are deleted when no longer in use [2022-02-17]
+    Error display system now shows the line of the error and what file it was in [2022-2-17]
 
 ### DEPRECATED ###
 
