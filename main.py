@@ -2,7 +2,7 @@
 ### https://github.com/Jason-Silla/JohnAI ###
 
 from User import User, Month
-from os.path import exists, join
+from os.path import exists
 from platform import system as os
 from os import system
 from os import remove
@@ -37,7 +37,7 @@ try:
                         break
                 if loop2:
                     print("Your username must have at least 1 character.")
-                del(usernameLower, character, letter, loop2)
+                    del(usernameLower, character, letter, loop2)
                 else:
                     break
             ### Make file ###
@@ -77,24 +77,24 @@ try:
             if user.username == "":
                 loop2 = True
                 while True:
-                letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-                username = input("AN ERROR OCCURED IN YOUR FILE. PLEASE REENTER YOUR USERNAME: ")
-                username.strip()
-                usernameLower = username.lower()
-                for character in usernameLower:
-                    for letter in letters:
-                        if character == letter:
-                            loop2 = False
+                    letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+                    username = input("AN ERROR OCCURED IN YOUR FILE. PLEASE REENTER YOUR USERNAME: ")
+                    username.strip()
+                    usernameLower = username.lower()
+                    for character in usernameLower:
+                        for letter in letters:
+                            if character == letter:
+                                loop2 = False
+                                break
+                        if not loop2:
                             break
-                    if not loop2:
+                    if loop2:
+                        print("Your username must have at least 1 character.")
+                    else:
+                        user.setUsername(username)
+                        user.userFileReset()
                         break
-                if loop2:
-                    print("Your username must have at least 1 character.")
-                del(usernameLower, character, letter, loop2)
-                else:
-                    user.setUsername(username)
-                    user.userFileReset()
-                    break
+                    del(usernameLower, character, letter, loop2)
             returninguser.close()
         del(userinfo, line, i)
 
@@ -193,7 +193,6 @@ try:
 - Make you look like a hacker
 - Tell you the date and time""")
                                 
-
         ### Empty the response list ###
         responseByWord.clear()
 except Exception as error:
