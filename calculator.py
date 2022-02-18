@@ -2,8 +2,10 @@
 ### https://github.com/Jason-Silla/JohnAI ###
 
 from decimal import DivisionByZero
+from msilib.schema import Error
 from random import randint
 from math import sqrt
+import sys
 
 def factorialFinder(z):
     if z == 1:
