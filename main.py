@@ -1,15 +1,57 @@
 ### Written by Jason-Silla ###
 ### https://github.com/Jason-Silla/JohnAI ###
 
-from User import User, Month
+import subprocess
 from os.path import exists
+
+def loading(commands=[], toolbarSize=40, waitTime=0.2):
+    from subprocess import check_output
+    from sys import stdout
+    from time import sleep
+    #setup toolbar
+    stdout.write("[%s]" % (" " * toolbarSize))
+    stdout.flush()
+    stdout.write("\b" * (toolbarSize+1)) # return to start of line, after '['
+    listlen = len(commands)
+
+    for i in range(toolbarSize):
+        if listlen > i:
+            installProgress = check_output(commands[i])
+            print(installProgress)
+        else:
+            sleep(waitTime)
+        # update the bar
+        stdout.write("-")
+        stdout.flush()
+
+    stdout.write("]\n") # this ends the progress bar
+    if listlen == 0:
+        del(toolbarSize, waitTime, listlen, commands)
+    else:
+        del(toolbarSize, waitTime, listlen, commands, installProgress)
+
+if not exists("user.txt"):
+    pipInstalled = subprocess.check_output(["pip","--version"])
+    pipInstalled = pipInstalled.split(b" ")
+    pipVersion = pipInstalled[1].decode("utf-8").split(".")
+    if len(pipVersion) < 2:
+        print("PLEASE MAKE SURE YOU HAVE PIP INSTALLED (NOT PIP3).")
+        exit()
+
+    print("INSTALLING DEPENDENCIES...")
+    loading([["pip", "install", "opencv-python"]])
+
+
+del(pipInstalled, pipVersion)
+
+
+from User import User, Month
 from platform import system as os
 from os import system
 from os import remove
 from random import randint
 from datetime import datetime
 import hide
-import sys
 
 try:
     ### Generalized Words ###
