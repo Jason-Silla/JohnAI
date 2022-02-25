@@ -15,8 +15,8 @@ def loading(commands=[], toolbarSize=40, waitTime=0.2):
     listlen = len(commands)
 
     for i in range(toolbarSize):
-        if listlen > i:
-            installProgress = check_output(commands[i])
+        if listlen > i and i > 0:
+            installProgress = check_output(commands[i-1])
             print(installProgress)
         else:
             sleep(waitTime)
@@ -54,6 +54,11 @@ from datetime import datetime
 import hide
 
 try:
+    pythonCmd = ""
+    if os() == "Darwin" or os() == "Linux" or os() == "Java":
+        pythonCmd = "python3"
+    elif os() == "Windows":
+        pythonCmd = "python"
     ### Generalized Words ###
     greetings = ["hello", "hi", "yo"]
     adioses = ["bye", "adios", "goodbye", "leave"]
@@ -205,7 +210,7 @@ try:
                     break
                 ### Runs the calculator ###
                 elif word == "calculator":
-                    system("python3 calculator.py")
+                    system(f"{pythonCmd} calculator.py")
                     break
                 else:
                     ### Checks to see if the user said a greeting ###
