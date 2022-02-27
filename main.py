@@ -13,6 +13,7 @@ def loading(commands=[], toolbarSize=40, waitTime=0.2):
     stdout.flush()
     stdout.write("\b" * (toolbarSize+1)) # return to start of line, after '['
     listlen = len(commands)
+    installProgress = ""
 
     for i in range(toolbarSize):
         if listlen > i and i > 0:
@@ -40,9 +41,7 @@ if not exists("user.txt"):
 
     print("INSTALLING DEPENDENCIES...")
     loading([["pip", "install", "opencv-python"]])
-
-
-del(pipInstalled, pipVersion)
+    del(pipInstalled, pipVersion)
 
 
 from User import User, Month
@@ -52,6 +51,7 @@ from os import remove
 from random import randint
 from datetime import datetime
 import hide
+import sys
 
 try:
     pythonCmd = ""
@@ -221,7 +221,7 @@ try:
                     ### Checks to see if the user said an adios ###
                     for adios in adioses:
                         if adios == word:
-                            print(f"Have a nice day {user.firstName}")
+                            print(f"Have a nice day {user.firstName}.")
                             exit()
                     ### Interpreting Statements Testing ###
                     if len(responseByWord) < 6:
