@@ -18,6 +18,10 @@ In User.py:
 In main.py:
     Login variables are deleted when no longer in use [2022-02-17]
     Error display system now shows the line of the error and what file it was in [2022-02-17]
+    
+In mathx.py:
+    Fixed init functions for Fraction class [2022-03-01]
+    Fixed simplify function [2022-03-01]
 
 ### DEPRECATED ###
 
