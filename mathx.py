@@ -5,20 +5,22 @@ class Fraction:
     numerator = 1
     denominatior = 1
 
-    def init(self, numerator, denominator):
-        self.numerator = numerator
-        self.denominator = denominator
-    
-    def init():
-        pass
+    def __init__(self, *info):
+        if len(info) == 2:
+            self.numerator = numerator
+            self.denominator = denominator
+        elif len(info) == 0:
+            pass
+        else:
+            raise ValueError
 
     def simplify(self):
         num = 2
         while True:
-            if numerator % num == 0 and denominator % num == 0:
-                numerator = numerator/num
-                denominator = denominator/num
-            elif(not(num > numerator or num > denominator)):
+            if self.numerator % num == 0 and self.denominator % num == 0:
+                self.numerator = self.numerator/num
+                self.denominator = self.denominator/num
+            elif(not(num > self.numerator or num > self.denominator)):
                 num += 1
             else:
                 break

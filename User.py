@@ -87,6 +87,10 @@ class User:
                 self.setBrithday(userinfo[2])
             finally:
                 break
+    
+    def setUsername(self, username):
+        self.username = username
+        self.firstName = (username.split(" "))[0]
 
     def debug(self):
         print("(1) Username:", self.username)
