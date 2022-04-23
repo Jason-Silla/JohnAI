@@ -2,7 +2,6 @@
 ### https://github.com/Jason-Silla/JohnAI ###
 
 from decimal import DivisionByZero
-from msilib.schema import Error
 from random import randint
 from math import sqrt
 import sys
@@ -140,7 +139,7 @@ try:
                 break
         else:
             break
-except Error as error:
+except Exception as error:
     print("AN ERROR HAS OCCURED SOMEONE IN THE PROGRAM!!! PLEASE REPORT THE ERROR AT https://github.com/Jason-Silla/JohnAI")
     print(error)
     exception_type, exception_object, exception_traceback = sys.exc_info()
